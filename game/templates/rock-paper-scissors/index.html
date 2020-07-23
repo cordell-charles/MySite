@@ -1,10 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% load static %}
 <!DOCTYPE html>
 <html>
 
 <head>
 
 <title> Rock, Paper, Scissors game! </title>
-<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="stylesheet" type="text/css" href="{% static 'stylesheets/rps_stylesheet.css' %}">
 </head>
 
 <body>
@@ -25,61 +30,21 @@
 
 	<div class="choices">
 		<div class="choice" id="r">
-			<img src="images/rock.png" alt="">
+			<img src="{% static 'images/rps_images/rock.png' %}" alt="">
 		</div>
 		<div class="choice" id="p">
-			<img src="images/paper.png" alt="">
+			<img src="{% static 'images/rps_images/paper.png' %}" alt="">
 		</div>
 		<div class="choice" id="s">
-			<img src="images/scissors.png" alt="">
+			<img src="{% static 'images/rps_images/scissors.png' %}" alt="">
 		</div>
 	</div>
 
 	<p id="player-move-message"> Choose your move </p>
-	<script src="app.js" type="text/javascript" charset="utf-8"></script>
-</body>
-
-
-</html><!DOCTYPE html>
-<html>
-
-<head>
-
-<title> Rock, Paper, Scissors game! </title>
-<link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-
-<body>
-	<header>
-		<h1> Rock, Paper, Scissors! </h1>
-	</header>
-
-	<div class="scores">
-		<div id="player-label" class= "badge"> Player </div>
-		<div id="computer-label" class= "badge"> Computer </div>
-		<span id="player-score">0</span>-<span id="computer-score">0</span>
-	</div>
-
-	<div class="result">
-		<p> Who will be the winner? </p>
-	</div>
-
-
-	<div class="choices">
-		<div class="choice" id="r">
-			<img src="images/rock.png" alt="">
-		</div>
-		<div class="choice" id="p">
-			<img src="images/paper.png" alt="">
-		</div>
-		<div class="choice" id="s">
-			<img src="images/scissors.png" alt="">
-		</div>
-	</div>
-
-	<p id="player-move-message"> Choose your move </p>
-	<script src="app.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{% static 'js/rps.js' %}" type="text/javascript" charset="utf-8"></script>
 </body>
 
 
 </html>
+
+{% endblock %}

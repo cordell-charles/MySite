@@ -11,12 +11,13 @@
     <title>Hello, world!</title>
   </head>
   <body>
+    {% include 'nav.html' %}
   	<div class= 'container'>
   		<div class='row'>
   			<div class='col-6 mx-auto'>
-  				    <h1> base template </h1>
   				    {% block content %}
-  				    	replace here
+  				    	
+                
   				    {% endblock %}
   			</div>
   		</div>
