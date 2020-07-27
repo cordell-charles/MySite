@@ -3,9 +3,9 @@ from django.shortcuts import render
 
 
 # Create your views here.
-def home_page(request):
-	return render(request, "base.html")
+def home_page_view(request):
+	return render(request, "home.html")
 
 
-def connect_page(request):
+def connect_page_view(request):
 	return render(request, "connect.html")

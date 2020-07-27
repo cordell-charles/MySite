@@ -1,0 +1,44 @@
+{% include 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+
+<div class="container-fluid padding">
+  <div class="row welcome text-center">
+    <div class="col-12">
+      <h1 class="display-4"> Welcome to the game site </h1>
+    </div>
+    <hr>
+  </div>
+</div>
+
+<div class="container-fluid padding">
+  <div class="row padding">
+    <div class="col-md-6">
+      <div class="card">
+        <img src="{% static 'images/hangman_images/hangman-ss.png' %}"class="card-img-top">
+        <div class="card-body">
+          <h4 class= "card-title"> Hangman </h4>
+          <p class="card-text"> Click here to play Hangman </p>
+          <a href="hangman/" class="btn btn-outline-secondary"> Hangman </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <img src="{% static 'images/rps_images/r-p-s-ss.png' %}"class="card-img-top">
+        <div class="card-body">
+          <h4 class= "card-title"> Rock Paper Scissors </h4>
+          <p class="card-text"> Click here to play a game of rock paper scissors </p>
+          <a href="r-p-s/" class="btn btn-outline-secondary"> Rock-Paper-Scissors </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% endblock %}

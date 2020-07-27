@@ -2,7 +2,9 @@ from django.http import Http404
 from django.shortcuts import render, get_object_or_404, redirect
 
 
-
+def game_list_view(request):
+	template_name = 'game-layout.html'
+	return render(request, template_name)
 
 def hangman_retrieve_view(request):
 	# hangman game view

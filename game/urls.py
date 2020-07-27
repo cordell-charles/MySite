@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.contrib.auth import views as auth_views
 from django.urls import include, path, re_path
-from .views import hangman_retrieve_view, rps_retrieve_view
+from .views import hangman_retrieve_view, rps_retrieve_view, game_list_view
 
 
 urlpatterns = [
+	path('', game_list_view),
     path('hangman/', hangman_retrieve_view),
     path('r-p-s/', rps_retrieve_view),
 ]
