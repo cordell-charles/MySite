@@ -16,12 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import include, path, re_path
-from .views import home_page_view, connect_page_view
+from .views import home_page_view, connect_page_view, profile_view
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_page_view, name= 'home'),
     path('connect/', connect_page_view, name='connect'),
+    path('my-profile/', profile_view, name='profile'),
     path('app/', include('game.urls'))
 ]

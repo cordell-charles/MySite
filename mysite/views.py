@@ -9,3 +9,6 @@ def home_page_view(request):
 
 def connect_page_view(request):
 	return render(request, "connect.html")
+
+def profile_view(request):
+	return render(request, "profile.html")
