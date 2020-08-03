@@ -26,7 +26,8 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['18.132.199.211', 'ec2-35-177-84-73.eu-west-2.compute.amazonaws.com', 'localhost']
+ALLOWED_HOSTS = ['ec2-35-177-84-73.eu-west-2.compute.amazonaws.com', 'localhost']
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -74,15 +75,18 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
 X_FRAME_OPTIONS = 'DENY'
-SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_BROWSER_XSS_FILTER = True
-SECURE_SSL_REDIRECT = True
-SECURE_HSTS_SECONDS = 3600
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
+# CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
+# SECURE_CONTENT_TYPE_NOSNIFF = True
+# SECURE_BROWSER_XSS_FILTER = True
+# SECURE_SSL_REDIRECT = True
+# SECURE_HSTS_SECONDS = 3600
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+
+
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
