@@ -2,30 +2,27 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <link href="{% static 'stylesheets/style.css' %}" rel="stylesheet"> 
-</head>
 
 <body>
   <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"> Logo! </a> <!-- possibly add image <img src="img/logo.png" -->
+      <a class="navbar-brand" href="#"> Cordell Charles </a> <!-- possibly add image <img src="img/logo.png" -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
           <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="#navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="http://127.0.0.1:8000/"> Home </a>
+            <a class="nav-link" href="{% url 'home' %}"> Home </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"> About </a>
+            <a class="nav-link" href="{% url 'about' %}"> About </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"> Contact </a>
+            <a class="nav-link" href="{% url 'connect' %}"> Contact </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"> Connect </a>
+            <a class="nav-link" href="{% url 'my-profile' %}"> My Profile </a>
           </li>
         </ul>
       </div>
@@ -34,7 +31,3 @@
 </body>
 </html>
 
-{% block content %}
-
-
-{% endblock %}
