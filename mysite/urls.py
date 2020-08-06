@@ -30,11 +30,6 @@ urlpatterns = [
     path('app/', include('game.urls'))
 ]
 
-if settings.DEBUG:
-   import debug_toolbar
-   urlpatterns += [
-       url(r'^__debug__/', include(debug_toolbar.urls)),
-   ]
 
 if settings.DEBUG:
     from django.conf.urls.static import static
