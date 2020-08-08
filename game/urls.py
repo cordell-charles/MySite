@@ -19,7 +19,7 @@ from .views import hangman_retrieve_view, rps_retrieve_view, game_list_view
 
 
 urlpatterns = [
-	path('', game_list_view),
+	path('', game_list_view, name='games'),
     path('hangman/', hangman_retrieve_view),
     path('r-p-s/', rps_retrieve_view),
 ]

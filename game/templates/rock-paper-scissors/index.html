@@ -1,4 +1,4 @@
-{% extends 'bae.html' %}
+{% extends 'base.html' %}
 
 
 {% block content %}
@@ -9,7 +9,7 @@
 <head>
 
 <title> Rock, Paper, Scissors game! </title>
-<link rel="stylesheet" type="text/css" href="{% static 'stylesheets/rps_stylesheet.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'games/stylesheets/rps_stylesheet.css' %}">
 </head>
 
 <body>
@@ -28,20 +28,32 @@
 	</div>
 
 
-	<div class="choices">
-		<div class="choice col-4" id="r">
-			<img src="{% static 'images/rps_images/rock.png' %}" alt="">
-		</div>
-		<div class="choice col-4" id="p">
-			<img src="{% static 'images/rps_images/paper.png' %}" alt="">
-		</div>
-		<div class="choice col-4" id="s">
-			<img src="{% static 'images/rps_images/scissors.png' %}" alt="">
+	<div class="container-fluid padding">
+		<div class="row text-center padding">
+			<div class="col-xs-12 col-sm-6 col-md-4">
+				<div class="choice" id="r">
+					<img src="{% static 'games/images/rps_images/rock.png' %}" alt="">
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-4">
+				<div class="choice" id="p">
+					<img src="{% static 'games/images/rps_images/paper.png' %}" alt="">
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-4">
+				<div class="choice" id="s">
+					<img src="{% static 'games/images/rps_images/scissors.png' %}" alt="">
+				</div>
+			</div>
+			<div class="row welcome text-center">
+				<div class="col-12">
+					<p id="player-move-message"> Choose your move </p>
+				</div>
+			</div>
 		</div>
 	</div>
 
-	<p id="player-move-message"> Choose your move </p>
-	<script src="{% static 'js/rps.js' %}" type="text/javascript" charset="utf-8"></script>
+	<script src="{% static 'games/js/rps.js' %}" type="text/javascript" charset="utf-8"></script>
 </body>
 
 

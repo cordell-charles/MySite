@@ -8,12 +8,12 @@
 
 <head>
 	<title> Hangman! </title>
-	<link rel="stylesheet" type="text/css" href="{% static 'stylesheets/hangman_stylesheet.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'games/stylesheets/hangman_stylesheet.css' %}">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-	<script src="{% static 'js/jquery-3.5.1.js' %}"></script>
+	<script src="{% static 'games/js/jquery-3.5.1.js' %}"></script>
 	<div class= "wrapper">
 		<h1 id= "heading"> Hangman! </h1>
 
@@ -23,7 +23,7 @@
 		</div>  
 
 
-		<div class="letters">
+		<div class="container">
 			<div id="underline-1">
 				<div id="letter-1"></div>
 			</div>
@@ -71,8 +71,10 @@
 			</div>
 		</div>
 
-		<div class= "drawing">
+		<div class="container">
 			<canvas id="myCanvas" width="500" height="500"></canvas>
+		</div>
+		<div>
 
 			<h4 id="comment"></h4>
 
@@ -117,7 +119,7 @@
 		</div>
 	</div>
 
-	<script src="{% static 'js/hangman.js' %}" type="text/javascript" charset="utf-8"></script>
+	<script src="{% static 'games/js/hangman.js' %}" type="text/javascript" charset="utf-8"></script>
 </body>
 
 </html>

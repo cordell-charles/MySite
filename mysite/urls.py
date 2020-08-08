@@ -18,16 +18,15 @@ from django.conf import settings
 from django.conf.urls import url
 from django.contrib.auth import views as auth_views
 from django.urls import include, path, re_path
-from .views import home_page_view, about_page_view, connect_page_view, profile_view
+from .views import home_page_view, connect_page_view, profile_view
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_page_view, name= 'home'),
     path('connect/', connect_page_view, name='connect'),
-    path('about/', about_page_view, name= 'about'),
     path('my-profile/', profile_view, name='my-profile'),
-    path('app/', include('game.urls'))
+    path('games/', include('game.urls'))
 ]
 
 

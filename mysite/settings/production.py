@@ -31,7 +31,7 @@ TEMPLATES = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'MySite/db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         # 'USER': 'db-name',
         # 'PASSWORD': 'db-password'
         # 'HOST': 'host',
@@ -52,3 +52,12 @@ SECURE_HSTS_PRELOAD = True
 # SECURE_HSTS_SECONDS = 3600
 # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+
+# Static files (CSS, JavaScript, Images) - https://docs.djangoproject.com/en/3.0/howto/static-files/
+
+STATIC_URL = '/static/'
+STATIC_ROOT = '/home/ubuntu/MySite/static_cdn/'
+STATICFILES_DIRS = [
+  os.path.join(BASE_DIR, 'static')
+]

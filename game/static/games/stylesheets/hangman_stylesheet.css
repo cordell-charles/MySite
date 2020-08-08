@@ -24,6 +24,7 @@
 
 body {
 	background-image: linear-gradient(#bdc3c7, #2c3e50);
+
 }
 
 
@@ -53,12 +54,10 @@ body {
 }
 
 
-.drawing{
-	text-align: center;
-}
 
 #myCanvas {
 	background: #ffffff;
+	text-align: center;
 	border: 1px solid #000000;
 	margin-top: 150px;
 	margin-right: 500px;
