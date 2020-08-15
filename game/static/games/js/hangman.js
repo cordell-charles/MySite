@@ -172,7 +172,7 @@ function win() {
 	hangman_wins = hangman_wins + 1;
 	win_span.innerHTML = hangman_wins;
 	sessionStorage.setItem('hangman_wins', JSON.stringify(hangman_wins));
-	nextGame_button.style.display = "block";
+	nextGame_button.disabled = false;
 
 
 }
@@ -184,7 +184,7 @@ function lose(word) {
 	hangman_losses = hangman_losses + 1;
 	losses_span.innerHTML = hangman_losses;
 	sessionStorage.setItem('hangman_losses', JSON.stringify(hangman_losses));
-	nextGame_button.style.display = "block";
+	nextGame_button.disabled = false;
 }
 
 
