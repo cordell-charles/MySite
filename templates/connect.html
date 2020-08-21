@@ -8,34 +8,84 @@
 	<title> Connect page! </title>
 </head>
 <body>
-	<div class="container-fluid padding">
-		<div class="row text-center padding">
-			<div class="col-12">
-				<h2> Connect with me on any of these platforms </h2>
-			</div>
-			<div class="col-12 social padding">
-				<a href="https://www.facebook.com/cordell.charles"><i class="fab fa-facebook"></i></a>
-				<a href="https://github.com/cordell-charles"><i class="fab fa-github"></i></a>
-				<a href="https://www.instagram.com/cordell_charles/"><i class= "fab fa-instagram"></i></a>
-				<a href="https://www.linkedin.com/in/cordell-charles"><i class="fab fa-linkedin"></i></a>
-			</div>
+
+
+<div class= "container-fluid padding">
+	<div class="row text-center padding">
+		<div class="col-12">
+			<h1> If you have come across any issues on the platform or have any ideas for improvements, please comment here :) </h1>
 		</div>
 	</div>
+</div>
 
 
-	<footer>
-		<div class="container-fluid padding">
-			<div class="row text-center">
-				<div class="col-md-12">
-					<hr class="light">
-					<h3> Cordell Charles </h3>
-					<p> P: +44 75723 48482</p>
-					<p> E: cordellcharles95@gmail.com </p>
-					<hr class="light">
+
+{% for object in objects %}
+<div class="container-fluid padding">
+	<div class="row padding">
+		<div class="col-2 mx-auto">
+			<div class="card" style="width:18rem;">
+				<img class="card-img-top" src="" alt="Card image cap"> <!-- {{ object.image.url }} --> 
+				<div class="card-body">
+					<h5 class="card-title"> {{ object.title }} </h5>
+					<p class="card-text"> {{ object.content }} </p>
+					<small class= 'text-muted'> {{ object.name }}</small>
+					<small class= 'text-muted'> {{ object.timestamp }}</small>
 				</div>
 			</div>
 		</div>
-	</footer>
+	</div>
+</div>
+{% endfor %}
+
+
+
+
+
+
+<div class="container-fluid padding">
+	<div class="row text-center padding">
+		<div class="col-12">
+			<form method='POST' action='.'> {% csrf_token %}
+					{{ form.as_p }}
+				<button type="submit" class="btn btn-primary"> Submit </button>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<div class="container-fluid padding">
+	<div class="row text-center padding">
+		<div class="col-12">
+			<h2> Feel free to connect with me on any of these platforms </h2>
+		</div>
+		<div class="col-12 social padding">
+			<a href="https://www.facebook.com/cordell.charles"><i class="fab fa-facebook"></i></a>
+			<a href="https://github.com/cordell-charles"><i class="fab fa-github"></i></a>
+			<a href="https://www.instagram.com/cordell_charles/"><i class= "fab fa-instagram"></i></a>
+			<a href="https://www.linkedin.com/in/cordell-charles"><i class="fab fa-linkedin"></i></a>
+		</div>
+	</div>
+</div>
+
+
+<footer>
+	<div class="container-fluid padding">
+		<div class="row text-center">
+			<div class="col-md-12">
+				<hr class="light">
+				<h3> Cordell Charles </h3>
+				<p> P: +44 75723 48482</p>
+				<p> E: cordellcharles95@gmail.com </p>
+				<hr class="light">
+			</div>
+		</div>
+	</div>
+</footer>
 
 </body>
 
