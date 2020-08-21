@@ -17,5 +17,3 @@ def rps_retrieve_view(request):
 	template_name = 'rock-paper-scissors/index.html'
 	return render(request, template_name)
 
-
-

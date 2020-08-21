@@ -47,13 +47,13 @@ html, body{
 
 
 .btn-primary {
-  background-color: #6648b1;
-  border: 1px solid #6648b1;
+  background-color: #87CEFA;
+  border: 1px solid #87CEFA;
 }
 
 .btn-primary:hover {
-  background-color: #563d7c;
-  border: 1px solid #563d7c;
+  background-color: #1E90FF;
+  border: 1px solid #1E90FF;
 }
 
 
@@ -125,12 +125,6 @@ html, body{
 
 .fa-linkedin {
   color: #0e76a8
-}
-
-header {
-  background-color: #3f3f3f;
-  color: #d5d5d5;
-  padding: 2rem;
 }
 
 
