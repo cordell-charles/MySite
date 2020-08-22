@@ -17,3 +17,9 @@ def rps_retrieve_view(request):
 	template_name = 'rock-paper-scissors/index.html'
 	return render(request, template_name)
 
+
+def snake_retrieve_view(request):
+	# Rock-Paper-Scissors game view
+	template_name = 'snake/snake.html'
+	return render(request, template_name)
+
