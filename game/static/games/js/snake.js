@@ -1,10 +1,17 @@
-const SNAKE_SPEED = 5 // How many times the snake moves per second
 var lastRenderTime = 0
-const snakeBody = [{ x:11, y:11 }]
 const gameBoard = document.getElementById('game-board')
+var gameOver = false
 
 
 function main(currentTime) {
+
+	if (gameOver) {
+		if (confirm('You lost. Press ok to restart.')) {
+			location.reload();
+		}
+		return 
+	}
+
 	window.requestAnimationFrame(main)
 	const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000
 	if (secondsSinceLastRender < 1 / SNAKE_SPEED) {
@@ -15,11 +22,40 @@ function main(currentTime) {
 
 	update();
 	render();
+	checkLoss();
 }
 
 window.requestAnimationFrame(main)
 
 
+
+function update() {
+	updateSnake();
+	updateFood();
+}
+
+
+
+function render() {
+	gameBoard.innerHTML = ''
+	renderSnake(gameBoard);
+	renderFood(gameBoard);
+}
+
+
+
+// Grid positioning:
+function randomGridPosition() {
+	return {
+		x: Math.floor(Math.random() * 21) + 1,
+		y: Math.floor(Math.random() * 21) + 1,
+	}
+}
+
+
+function outsideGrid(position) {
+	return position.x < 1 || position.x > 21 || position.y < 1 || position.y > 21	
+}
 
 
 
@@ -27,11 +63,15 @@ window.requestAnimationFrame(main)
 
 
 // Snake drawing and updating goes here 
+const SNAKE_SPEED = 6 // How many times the snake moves per second
+const snakeBody = [{ x:11, y:11 }]
+var newSegments = 0
 
 
 function updateSnake() {
+	addSegments()
 	const inputDirection = getInputDirection()
-	for (let i = snakeBody.length - 2; i >= 0; i--) {
+	for (var i = snakeBody.length - 2; i >= 0; i--) {
 		snakeBody[i + 1] = { ...snakeBody[i] } 
 	}
 
@@ -51,26 +91,49 @@ function renderSnake(gameBoard) {
 }
 
 
-function update() {
-	updateSnake();
-	updateFood();
+function expandSnake(num) {
+	newSegments += num
+}
+
+function onSnake(position, {ignoreHead = false} = {} ) {
+	return snakeBody.some((segments, index) => {
+		if (ignoreHead && index === 0) {
+			return false
+		}
+		return equalPositions(segments, position)
+	}) 
+}
+
+function equalPositions(pos1, pos2) {
+	return pos1.x === pos2.x && pos1.y === pos2.y
+}
+
+function addSegments() {
+	for (var i = 0; i < newSegments; i++) {
+		snakeBody.push( snakeBody[snakeBody.length - 1])
+	}
+
+	newSegments = 0
+}
+
+function snakeIntersection() {
+	return onSnake(snakeBody[0], {ignoreHead: true})
 }
 
 
 
-function render() {
-	gameBoard.innerHTML = ''
-	renderSnake(gameBoard);
-	renderFood(gameBoard);
-}
 
 
 
 // Food drawing and updating goes here 
-var food = { x: 0, y: 1 }
+var food = randomFoodPosition()
+const EXPANSION_RATE = 1
 
 function updateFood() {
-
+	if (onSnake(food)) {
+		expandSnake(EXPANSION_RATE);
+		food = randomFoodPosition()
+	}
 }
 
 
@@ -81,6 +144,19 @@ function renderFood(gameBoard) {
 	foodElement.classList.add('food')
 	gameBoard.appendChild(foodElement)
 }
+
+function randomFoodPosition() {
+	var newFoodPosition
+	while (newFoodPosition == null || onSnake(newFoodPosition)) {
+		newFoodPosition = randomGridPosition()
+	}
+	return newFoodPosition
+}
+
+
+
+
+
 
 
 
@@ -115,4 +191,13 @@ window.addEventListener('keydown', e => {
 function getInputDirection() {
 	lastInputDirection = inputDirection
 	return inputDirection
+}
+
+
+
+
+
+// Check for losses: 
+function checkLoss() {
+	gameOver = outsideGrid(snakeBody[0]) || snakeIntersection()
 }
