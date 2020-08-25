@@ -4,6 +4,11 @@
 	padding:0;
 }
 
+html, body {
+	background-image: linear-gradient(#bdc3c7, #2c3e50); 
+	height: 100%;
+	background-attachment: fixed;
+}
 
 #heading {
 	padding: 20px;
@@ -22,72 +27,65 @@
 }
 
 
-body {
-	background-image: linear-gradient(#bdc3c7, #2c3e50);
-
-}
-
-
-.letters{
-	margin-left: 200px;
-	text-align: center;
-}
-
-
-#letter1, #letter2, #letter3, #letter4, #letter5, #letter6, #letter7, #letter8, #letter9, #letter10, #letter11, #letter12, #letter13, #letter14, #letter15 {
-	width: 50px;
-	height: 50px;
-	margin-bottom: 30px;
-	margin-left: 10px;
-	text-align: center;
-	line-height: 60px;
-}
-
-#underline-1, #underline-2, #underline-3, #underline-4, #underline-5, #underline-6, #underline-7, #underline-8, #underline-9, #underline-10, #underline-11, #underline-12, #underline-13, #underline-14, #underline-15 {
-	display: none;
-	float: left;
-	width: 50px;
-	height: 50px;
-	margin-left: 10px;
+#all-letters {
+	padding-bottom: 50px;
 	font-size: 30px;
+	text-align: center;
 	color: #000000;
 }
 
 
+#underline-1, #underline-2, #underline-3, #underline-4, #underline-5, #underline-6, #underline-7, #underline-8, #underline-9, #underline-10, #underline-11, #underline-12, #underline-13, #underline-14, #underline-15 {
+	float: left;
+	width: 50px;
+	height: 50px;
+	margin-left: 10px;
+} 
 
-#myCanvas {
+
+
+#mycanvas {
 	background: #ffffff;
 	border: 1px solid #000000;
-	margin-top: 150px;
-	margin-right: 500px;
+	padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    display: block;
 }
+
+
+
+#comment {
+	padding-top: 10px;
+	font-size: 45px;
+}
+
 
 #answer {
 	font-size: 50px;
 }
 
-
-#statement {
-	text-align: center;
-}
-
-
 button {
 	width: 75px;
 	height: 60px;
 	font-size: 40px;
-	background-color: #bdc3c7;
+	background-color: #87CEFA;
 	color: black;
 }
 
-#next-game:hover, #reset:hover {
+button:not(.no-hover):hover { /* applies hover styling to buttons without the no-hover class */
+  color: #d5d5d5;
+}
+
+
+#reset:hover, #next-game:hover{
 	color: #d5d5d5;
 }
 
+
 #next-game {
-	position: relative;
-	left: 450px;
-	top: 200px;
 	width: 200px;
 	height: 100px;
 	font-size: 40px;
@@ -95,10 +93,14 @@ button {
 	background-color: #34eba1;
 }
 
+
+#next-game:disabled { /* applied styling to disabled button so users cannot cycle through words unless a game is completed unless resetting their score */
+	color: grey;
+	background-color: #d5d5d5;
+}
+
+
 #reset {
-	position: relative;
-	left: -450px;
-	top: 200px;
 	width: 150px;
 	height: 80px;
 	font-size: 40px;
@@ -109,31 +111,39 @@ button {
 
 
 
-
 /* mid - max size */ 
 @media (max-width: 992px) {
+
+
 	button {
-		width: 65px;
-		height: 50px;
-		font-size: 35px;
+		width: 50px;
+		height: 45px;
+		font-size: 28px;
 	}
 
 	#next-game {
 		position: relative;
-		left: 100px;
-		top: 0px;
-		width: 180px;
+		left: -20px;
+		top: -20px;
+		width: 130px;
 		height: 95px;
-		font-size: 35px;
+		font-size: 28px;
 	}
 
 	#reset {
 		position: relative;
-		left: -100px;
-		top: 0px;
-		width: 140px;
+		left: 20px;
+		top: -10px;
+		width: 130px;
 		height: 75px;
-		font-size: 35px;
+		font-size: 30px;
+	}
+
+	#mycanvas {
+		background: #ffffff;
+		border: 1px solid #000000;
+		width: 400px;
+		height: 400px;
 	}
 }
 
@@ -142,28 +152,64 @@ button {
 /* small - medium screen */ 
 
 @media (max-width: 768px) {
-	button {
-		width: 60px;
-		height: 45px;
+
+	#heading {
+		font-size: 50px;
+	}
+
+	#scores {
+		font-size: 18px;
+	}
+
+	#comment {
+		font-size: 25px;
+	}
+
+
+	#answer {
 		font-size: 30px;
 	}
 
+	button {
+		width: 35px;
+		height: 30px;
+		font-size: 20px;
+	}
+
+
 	#next-game {
 		position: relative;
-		left: 100px;
-		top: 0px;
-		width: 140px;
-		height: 70px;
-		font-size: 25px;
+		left: -100px;
+		top: 110px;
+		width: 120px;
+		height: 50px;
+		font-size: 17px;
 	}
 
 	#reset {
 		position: relative;
-		left: -100px;
-		top: 0px;
-		width: 120px;
-		height: 60px;
-		font-size: 30px;
+		left: 100px;
+		top: 115px;
+		width: 100px;
+		height: 45px;
+		font-size: 20px;
+	}
+
+	#mycanvas {
+		background: #ffffff;
+		border: 1px solid #000000;
+		width: 350px;
+		height: 350px;
+	}
+
+	#all-letters {
+		font-size: 20px;
+	}
+
+
+	#underline-1, #underline-2, #underline-3, #underline-4, #underline-5, #underline-6, #underline-7, #underline-8, #underline-9, #underline-10, #underline-11, #underline-12, #underline-13, #underline-14, #underline-15 {
+		width: 30px;
+		height: 40px;
 	}
 	
 }
@@ -173,16 +219,37 @@ button {
 
 /* Smallest screens */ 
 @media (max-width: 576px) {
-	button {
-		width: 45px;
-		height: 30px;
-		font-size: 20px;
+
+
+	#heading {
+		font-size: 50px;
 	}
+
+	#scores {
+		font-size: 13px;
+	}
+
+	#comment {
+		font-size: 18px;
+	}
+
+
+	#answer {
+		font-size: 25px;
+	}
+
+
+	button {
+		width: 30px;
+		height: 23px;
+		font-size: 15px;
+	}
+
 
 	#next-game {
 		position: relative;
-		left: 50px;
-		top: 0px;
+		left: -100px;
+		top: 115px;
 		width: 120px;
 		height: 55px;
 		font-size: 20px;
@@ -190,10 +257,28 @@ button {
 
 	#reset {
 		position: relative;
-		left: -50px;
-		top: 0px;
+		left: 100px;
+		top: 120px;
 		width: 100px;
 		height: 50px;
 		font-size: 20px;
 	}
+
+	#mycanvas {
+		background: #ffffff;
+		border: 1px solid #000000;
+		width: 300px;
+		height: 300px;
+	}
+
+
+	#all-letters {
+		font-size: 20px;
+	}
+
+
+	#underline-1, #underline-2, #underline-3, #underline-4, #underline-5, #underline-6, #underline-7, #underline-8, #underline-9, #underline-10, #underline-11, #underline-12, #underline-13, #underline-14, #underline-15 {
+		width: 30px;
+		height: 40px;
+	} 
 }

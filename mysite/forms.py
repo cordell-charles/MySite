@@ -11,4 +11,4 @@ class ContactPostForm(forms.ModelForm):
 
 	class Meta:
 		model = ContactPost
-		fields = ['title','content', 'name'] # 'image' for later commits
+		fields = ['title','content', 'image', 'name']

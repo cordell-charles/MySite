@@ -58,6 +58,8 @@ SECURE_HSTS_PRELOAD = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = '/home/ubuntu/MySite/static_cdn/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = '/home/ubuntu/MySite/static_cdn' 
 STATICFILES_DIRS = [
   os.path.join(BASE_DIR, 'static')
 ]

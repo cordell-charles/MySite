@@ -2,6 +2,9 @@
 
 
 {% block content %}
+{% load static %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +16,7 @@
 <div class= "container-fluid padding">
 	<div class="row text-center padding">
 		<div class="col-12">
-			<h1> If you have come across any issues on the platform or have any ideas for improvements, please comment here :) </h1>
+			<h1> Get in touch below! </h1>
 		</div>
 	</div>
 </div>
@@ -25,7 +28,9 @@
 	<div class="row padding">
 		<div class="col-2 mx-auto">
 			<div class="card" style="width:18rem;">
-				<img class="card-img-top" src="" alt="Card image cap"> <!-- {{ object.image.url }} --> 
+				{% if object.image %}
+					<img class="card-img-top" src="{{object.image.url}}" alt="Card image cap"> 
+				{% endif %}
 				<div class="card-body">
 					<h5 class="card-title"> {{ object.title }} </h5>
 					<p class="card-text"> {{ object.content }} </p>
@@ -40,16 +45,31 @@
 
 
 
+<div class="fixed-background">
+	<div class="col-12 text-center text=uppercase mt-5">
+		<h1 class="text-secondary pb-3">
+			<i class="fas fa-asterisk"></i> Expand comment box below <i class="fas fa-asterisk"></i>
+		</h1>
+		<div class="border-top border-secondary w-50 mx-auto"></div>
+	</div>
+	<div class="fixed-wrap">
+		<div class="fixed-image"></div>
+	</div>
+</div>
 
 
 
-<div class="container-fluid padding">
-	<div class="row text-center padding">
-		<div class="col-12">
-			<form method='POST' action='.'> {% csrf_token %}
-					{{ form.as_p }}
-				<button type="submit" class="btn btn-primary"> Submit </button>
-			</form>
+
+<button class="comments" data-toggle="collapse" data-target="#comment-section"> Click to add a comments </button>
+<div id="comment-section" class="collapse">
+	<div class="container-fluid padding">
+		<div class="row text-center padding">
+			<div class="col-12">
+				<form method='POST' action='.' enctype='multipart/form-data'> {% csrf_token %}
+						{{ form.as_p }}
+					<button type="submit" class="btn btn-primary"> Submit </button>
+				</form>
+			</div>
 		</div>
 	</div>
 </div>

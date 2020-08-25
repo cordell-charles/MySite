@@ -1,6 +1,6 @@
 // Canvas for handman stand
 
-var canvas = document.getElementById("myCanvas").getContext("2d");
+var canvas = document.getElementById("mycanvas").getContext("2d");
 canvas.lineWidth = 4;
 canvas.beginPath(); // horizontal base
 	canvas.moveTo(15, 450);
@@ -168,7 +168,8 @@ wordMarking(word);
 
 
 function win() {
-	comment_para.innerHTML = "Congratulations! You have won!";
+	var str = "Congratulations! You have won!"
+	comment_para.innerHTML = str.fontcolor("#34eba1")
 	hangman_wins = hangman_wins + 1;
 	win_span.innerHTML = hangman_wins;
 	sessionStorage.setItem('hangman_wins', JSON.stringify(hangman_wins));
@@ -179,8 +180,8 @@ function win() {
 
 
 function lose(word) {
-	comment_para.innerHTML = "You lose :/, the answer is:"
-	answer_para.innerHTML = word;
+	comment_para.innerHTML = "You lose! :("
+	answer_para.innerHTML = 'the answer is: ' + word.fontcolor("#eb3434");
 	hangman_losses = hangman_losses + 1;
 	losses_span.innerHTML = hangman_losses;
 	sessionStorage.setItem('hangman_losses', JSON.stringify(hangman_losses));
@@ -224,132 +225,158 @@ $("#reset").click(function() {
 $("#A").click(function() {
 	letter.push("a");
 	guessHandler(letter,word);
-	$("#A").prop('disabled', true);
+	$(this).prop('disabled', true);
+	$(this).addClass('no-hover');
 });
 $("#B").click(function() {
 	letter.push("b");
 	guessHandler(letter,word);
-	$("#B").prop('disabled', true);
+	$(this).prop('disabled', true);
+	$(this).addClass('no-hover');
 });
 $("#C").click(function() {
 	letter.push("c");
 	guessHandler(letter,word);
-	$("#C").prop('disabled', true);
+	$(this).prop('disabled', true);
+	$(this).addClass('no-hover');
 });
 $("#D").click(function() {
 	letter.push("d");
 	guessHandler(letter,word);
-	$("#D").prop('disabled', true);
+	$(this).prop('disabled', true);
+	$(this).addClass('no-hover');
 });
 $("#E").click(function() {
 	letter.push("e");
 	guessHandler(letter,word);
-	$("#E").prop('disabled', true);
+	$(this).prop('disabled', true);
+	$(this).addClass('no-hover');
 });
 $("#F").click(function() {
 	letter.push("f");
 	guessHandler(letter,word);
-	$("#F").prop('disabled', true);
+	$(this).prop('disabled', true);
+	$(this).addClass('no-hover');
 });
 $("#G").click(function() {
 	letter.push("g");
 	guessHandler(letter,word);
-	$("#G").prop('disabled', true);
+	$(this).prop('disabled', true);
+	$(this).addClass('no-hover');
 });
 $("#H").click(function() {
 	letter.push("h");
 	guessHandler(letter,word);
-	$("#H").prop('disabled', true);
+	$(this).prop('disabled', true);
+	$(this).addClass('no-hover');
 });
 $("#I").click(function() {
 	letter.push("i");
 	guessHandler(letter,word);
-	$("#I").prop('disabled', true);
+	$(this).prop('disabled', true);
+	$(this).addClass('no-hover');
 });
 $("#J").click(function() {
 	letter.push("j");
 	guessHandler(letter,word);
-	$("#J").prop('disabled', true);
+	$(this).prop('disabled', true);
+	$(this).addClass('no-hover');
 });
 $("#K").click(function() {
 	letter.push("k");
 	guessHandler(letter,word);
-	$("#K").prop('disabled', true);
+	$(this).prop('disabled', true);
+	$(this).addClass('no-hover');
 });
 $("#L").click(function() {
 	letter.push("l");
 	guessHandler(letter,word);
-	$("#L").prop('disabled', true);
+	$(this).prop('disabled', true);
+	$(this).addClass('no-hover');
 });
 $("#M").click(function() {
 	letter.push("m");
 	guessHandler(letter,word);
-	$("#M").prop('disabled', true);
+	$(this).prop('disabled', true);
+	$(this).addClass('no-hover');
 });
 $("#N").click(function() {
 	letter.push("n");
 	guessHandler(letter,word);
-	$("#N").prop('disabled', true);
+	$(this).prop('disabled', true);
+	$(this).addClass('no-hover');
 });
 $("#O").click(function() {
 	letter.push("o");
 	guessHandler(letter,word);
-	$("#O").prop('disabled', true);
+	$(this).prop('disabled', true);
+	$(this).addClass('no-hover');
 });
 $("#P").click(function() {
 	letter.push("p");
 	guessHandler(letter,word);
-	$("#P").prop('disabled', true);
+	$(this).prop('disabled', true);
+	$(this).addClass('no-hover');
 });
 $("#Q").click(function() {
 	letter.push("q");
 	guessHandler(letter,word);
-	$("#Q").prop('disabled', true);
+	$(this).prop('disabled', true);
+	$(this).addClass('no-hover');
 });
 $("#R").click(function() {
 	letter.push("r");
 	guessHandler(letter,word);
-	$("#R").prop('disabled', true);
+	$(this).prop('disabled', true);
+	$(this).addClass('no-hover');
 });
 $("#S").click(function() {
 	letter.push("s");
 	guessHandler(letter,word);
-	$("#S").prop('disabled', true);
+	$(this).prop('disabled', true);
+	$(this).addClass('no-hover');
 });
 $("#T").click(function() {
 	letter.push("t");
 	guessHandler(letter,word);
-	$("#T").prop('disabled', true);
+	$(this).prop('disabled', true);
+	$(this).addClass('no-hover');
 });
 $("#U").click(function() {
 	letter.push("u");
 	guessHandler(letter,word);
-	$("#U").prop('disabled', true);
+	$(this).prop('disabled', true);
+	$(this).addClass('no-hover');
 });
 $("#V").click(function() {
 	letter.push("v");
 	guessHandler(letter,word);
-	$("#V").prop('disabled', true);
+	$(this).prop('disabled', true);
+	$(this).addClass('no-hover');
 });
 $("#W").click(function() {
 	letter.push("w");
 	guessHandler(letter,word);
-	$("#W").prop('disabled', true);
+	$(this).prop('disabled', true);
+	$(this).addClass('no-hover');
 });
 $("#X").click(function() {
 	letter.push("x");
 	guessHandler(letter,word);
-	$("#X").prop('disabled', true);
+	$(this).prop('disabled', true);
+	$(this).addClass('no-hover');
 });
 $("#Y").click(function() {
 	letter.push("y");
 	guessHandler(letter,word);
-	$("#Y").prop('disabled', true);
+	$(this).prop('disabled', true);
+	$(this).addClass('no-hover');
 });
 $("#Z").click(function() {
 	letter.push("z");
 	guessHandler(letter,word);
-	$("#Z").prop('disabled', true);
+	$(this).prop('disabled', true);
+	$(this).addClass('no-hover');
 });
 
 

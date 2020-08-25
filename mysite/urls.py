@@ -18,13 +18,13 @@ from django.conf import settings
 from django.conf.urls import url
 from django.contrib.auth import views as auth_views
 from django.urls import include, path, re_path
-from .views import home_page_view, connect_list_and_create_view, profile_view
+from .views import home_page_view, contact_list_and_create_view, profile_view
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_page_view, name= 'home'),
-    path('connect/', connect_list_and_create_view, name='connect'),
+    path('contact/', contact_list_and_create_view, name='contact'),
     path('my-profile/', profile_view, name='my-profile'),
     path('games/', include('game.urls'))
 ]
@@ -33,3 +33,4 @@ urlpatterns = [
 if settings.DEBUG:
     from django.conf.urls.static import static
     urlpatterns += static(settings.STATIC_URL, document_root= settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
